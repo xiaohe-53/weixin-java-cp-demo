@@ -1,3 +1,5 @@
+package com.github.binarywang.demo.wx.cp;
+
 import com.github.binarywang.demo.wx.cp.config.WxCpConfiguration;
 import com.github.binarywang.demo.wx.cp.config.WxCpProperties;
 import com.github.binarywang.demo.wx.cp.handler.*;
