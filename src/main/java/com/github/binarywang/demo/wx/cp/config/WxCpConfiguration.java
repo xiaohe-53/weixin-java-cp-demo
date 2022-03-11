@@ -59,6 +59,7 @@ public class WxCpConfiguration {
         this.unsubscribeHandler = unsubscribeHandler;
         this.subscribeHandler = subscribeHandler;
         this.properties = properties;
+        System.out.println("the prop corpId is "+properties.getCorpId());
     }
 
 

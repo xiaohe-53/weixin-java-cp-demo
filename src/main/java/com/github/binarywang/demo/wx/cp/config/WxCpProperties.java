@@ -1,5 +1,6 @@
 package com.github.binarywang.demo.wx.cp.config;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -20,7 +21,7 @@ public class WxCpProperties {
    */
   private String corpId;
 
-  private List<AppConfig> appConfigs;
+  private List<AppConfig> appConfigs = new ArrayList<>();
 
   @Getter
   @Setter
