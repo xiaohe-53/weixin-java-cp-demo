@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 
+import lombok.Setter;
 import me.chanjar.weixin.cp.config.impl.WxCpDefaultConfigImpl;
 import me.chanjar.weixin.cp.constant.WxCpConsts;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ import me.chanjar.weixin.cp.message.WxCpMessageRouter;
  */
 @Configuration
 @EnableConfigurationProperties(WxCpProperties.class)
+@Setter
 public class WxCpConfiguration {
     private LogHandler logHandler;
     private NullHandler nullHandler;
