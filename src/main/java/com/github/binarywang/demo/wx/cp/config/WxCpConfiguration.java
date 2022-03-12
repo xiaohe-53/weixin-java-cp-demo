@@ -32,7 +32,6 @@ import me.chanjar.weixin.cp.message.WxCpMessageRouter;
  */
 @Configuration
 @EnableConfigurationProperties(WxCpProperties.class)
-@Setter
 public class WxCpConfiguration {
     private LogHandler logHandler;
     private NullHandler nullHandler;

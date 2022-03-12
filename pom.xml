@@ -14,8 +14,8 @@
     <artifactId>weixin-java-cp-demo</artifactId>
     <packaging>jar</packaging>
 
-    <name>spring-boot-demo-for-wechat-cp</name>
-    <description>Spring Boot Demo with wechat CP</description>
+    <name>spring-boot-stub-for-wechat-cp</name>
+    <description>Spring Boot StartUp with wechat CP</description>
 
     <properties>
         <weixin-java-cp.version>4.3.0</weixin-java-cp.version>
