@@ -9,6 +9,9 @@ import me.chanjar.weixin.cp.message.WxCpMessageHandler;
 import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 
 public class WxConfigUpdater {
+
+    public static final String SYS_APPROVAL_CHANGE = "sys_approval_change";
+
     public static boolean registerHandlers4Agent(int agentId,
                                                  WxCpMessageHandler msgHandler,
                                                  WxCpMessageHandler logHandler,
@@ -18,7 +21,8 @@ public class WxConfigUpdater {
                                                  WxCpMessageHandler unsubscribeHandler,
                                                  WxCpMessageHandler locationHandler,
                                                  WxCpMessageHandler contactChangeHandler,
-                                                 WxCpMessageHandler enterAgentHandler) {
+                                                 WxCpMessageHandler enterAgentHandler,
+                                                 WxCpMessageHandler shenpiHandler) {
         if (logHandler == null) {
             logHandler = new LogHandler();
         }
@@ -42,6 +46,9 @@ public class WxConfigUpdater {
         }
         if (enterAgentHandler == null) {
             enterAgentHandler = new EnterAgentHandler();
+        }
+        if (shenpiHandler == null) {
+            shenpiHandler = new ShenPiHandler();
         }
 
         WxCpService service = WxCpConfiguration.getCpService(agentId);
@@ -88,6 +95,8 @@ public class WxConfigUpdater {
         newRouter.rule().async(false).msgType(WxConsts.XmlMsgType.EVENT)
             .event(WxCpConsts.EventType.ENTER_AGENT).handler(enterAgentHandler).end();
 
+        newRouter.rule().async(false).msgType(WxConsts.XmlMsgType.EVENT)
+            .event(SYS_APPROVAL_CHANGE).handler(shenpiHandler).end();
         // 默认
         newRouter.rule().async(false).handler(msgHandler).end();
 
@@ -97,10 +106,12 @@ public class WxConfigUpdater {
     }
 
     public static boolean registerMsgHandlers4Agent(int agentId,
-                                                    WxCpMessageHandler msgHandler) {
+                                                    WxCpMessageHandler msgHandler,
+                                                    WxCpMessageHandler shenpiHandler) {
         return registerHandlers4Agent(agentId, msgHandler, null,
             null, null, null, null,
-            null, null, null);
+            null, null, null,
+            shenpiHandler);
     }
 
 }
