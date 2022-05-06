@@ -46,7 +46,7 @@ public class WxConfigUpdater {
 
         WxCpService service = WxCpConfiguration.getCpService(agentId);
 
-        final val newRouter = new WxCpMessageRouter(service);
+        val newRouter = new WxCpMessageRouter(service);
 
         // 记录所有事件的日志 （异步执行）
         newRouter.rule().handler(logHandler).next();
