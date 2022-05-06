@@ -86,6 +86,9 @@ public class WxCpConfiguration {
             routers.put(a.getAgentId(), this.newRouter(service));
             return service;
         }).collect(Collectors.toMap(service -> service.getWxCpConfigStorage().getAgentId(), a -> a));
+
+        System.out.println("the agent config map is:");
+        System.out.println(cpServices);
     }
 
     private WxCpMessageRouter newRouter(WxCpService wxCpService) {

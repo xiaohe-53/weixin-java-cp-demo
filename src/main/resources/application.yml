@@ -11,9 +11,9 @@ wechat:
         secret: LHa-68RtDXoPkh523pwmb4ABM-gfYLIGdzim8QWhPv4
         token: 61ee
         aesKey: VQnSZvInds4KMq5mOb5My721qKzSqCbzUlS95Pc4d6z
-      - agentId: 1000002
-        secret: b1111
-        token: b11
-        aesKey: b11
+      - agentId: 3010040
+        secret: PJA64Ml6Frgf1MrgppMzOEBbbllmqdvnyKg02ebClBo
+        token: tLsmhJfg5t6r2w7qnMfbCIw2PTY7dmU
+        aesKey: ze9WvAb12vqagVEDBbJe8lv9y4hJO1OhkrdKIhbqO8c
 server:
   port: 9000
