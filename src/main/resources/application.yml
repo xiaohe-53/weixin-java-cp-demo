@@ -5,12 +5,12 @@ logging:
     me.chanjar.weixin: DEBUG
 wechat:
   cp:
-    corpId: aaa
+    corpId: wx45a0972125658be9
     appConfigs:
-      - agentId: 1000001
-        secret: a111
-        token: a11
-        aesKey: a11
+      - agentId: 1000041
+        secret: LHa-68RtDXoPkh523pwmb4ABM-gfYLIGdzim8QWhPv4
+        token: 61ee
+        aesKey: VQnSZvInds4KMq5mOb5My721qKzSqCbzUlS95Pc4d6z
       - agentId: 1000002
         secret: b1111
         token: b11
