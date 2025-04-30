@@ -12,6 +12,9 @@ import me.chanjar.weixin.cp.message.WxCpMessageRouter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -20,8 +23,8 @@ import java.util.stream.Collectors;
  *
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
-//@Configuration
-//@EnableConfigurationProperties(WxCpProperties.class)
+@Configuration
+@EnableConfigurationProperties(WxCpProperties.class)
 public class WxCpConfiguration {
     private LogHandler logHandler;
     private NullHandler nullHandler;
@@ -61,6 +64,13 @@ public class WxCpConfiguration {
 
     @PostConstruct
     public void initServices() {
+        System.out.println("配置数量:" + (this.properties.getAppConfigs() == null ? "null" : this.properties.getAppConfigs().size()));
+        if (this.properties.getAppConfigs() != null) {
+            this.properties.getAppConfigs().forEach(config -> {
+                System.out.println("加载配置: agentId=" + config.getAgentId() + ", secret=" + config.getSecret());
+            });
+        }
+
         cpServices = this.properties.getAppConfigs().stream().map(a -> {
             val configStorage = new WxCpDefaultConfigImpl();
             configStorage.setCorpId(this.properties.getCorpId());
