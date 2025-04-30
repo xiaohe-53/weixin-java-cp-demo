@@ -21,7 +21,6 @@ import org.springframework.context.annotation.ComponentScans;
 public class WxCpDemoApplication {
 
   public static void main(String[] args) {
-      System.out.println("go");
     SpringApplication.run(WxCpDemoApplication.class, args);
   }
 

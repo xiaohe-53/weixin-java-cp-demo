@@ -64,12 +64,12 @@ public class WxCpConfiguration {
 
     @PostConstruct
     public void initServices() {
-        System.out.println("配置数量:" + (this.properties.getAppConfigs() == null ? "null" : this.properties.getAppConfigs().size()));
-        if (this.properties.getAppConfigs() != null) {
-            this.properties.getAppConfigs().forEach(config -> {
-                System.out.println("加载配置: agentId=" + config.getAgentId() + ", secret=" + config.getSecret());
-            });
-        }
+//        System.out.println("配置数量:" + (this.properties.getAppConfigs() == null ? "null" : this.properties.getAppConfigs().size()));
+//        if (this.properties.getAppConfigs() != null) {
+//            this.properties.getAppConfigs().forEach(config -> {
+//                System.out.println("加载配置: agentId=" + config.getAgentId() + ", secret=" + config.getSecret());
+//            });
+//        }
 
         cpServices = this.properties.getAppConfigs().stream().map(a -> {
             val configStorage = new WxCpDefaultConfigImpl();
