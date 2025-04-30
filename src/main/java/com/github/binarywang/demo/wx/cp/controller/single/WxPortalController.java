@@ -3,16 +3,11 @@ package com.github.binarywang.demo.wx.cp.controller.single;
 import com.github.binarywang.demo.wx.cp.config.single.WxCpConfiguration;
 import com.github.binarywang.demo.wx.cp.utils.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
-import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.cp.api.WxCpService;
-import me.chanjar.weixin.cp.bean.message.WxCpMessage;
-import me.chanjar.weixin.cp.bean.message.WxCpMessageSendResult;
 import me.chanjar.weixin.cp.bean.message.WxCpXmlMessage;
 import me.chanjar.weixin.cp.bean.message.WxCpXmlOutMessage;
 import me.chanjar.weixin.cp.util.crypto.WxCpCryptUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -79,21 +74,5 @@ public class WxPortalController {
 
         return null;
     }
-
-
-    @GetMapping
-    public String testGreetingMsg(@PathVariable Integer agentId,
-                                      @RequestParam("receiverUid") String receiverUid,
-                                      @RequestParam("content") String content) throws WxErrorException, JSONException {
-        final WxCpService wxCpService = WxCpConfiguration.getCpService(agentId);
-        if (wxCpService == null) {
-            throw new IllegalArgumentException(String.format("未找到对应agentId=[%d]的配置，请核实！", agentId));
-        }
-        WxCpMessage msg = WxCpMessage.TEXT().agentId(agentId).toUser(receiverUid).content(content).build();
-        WxCpMessageSendResult res = wxCpService.getMessageService().send(msg);
-        System.out.println("done~");
-        return "done";
-    }
-
 
 }
