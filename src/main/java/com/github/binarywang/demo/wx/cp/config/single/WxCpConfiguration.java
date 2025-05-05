@@ -74,6 +74,7 @@ public class WxCpConfiguration {
         cpServices = this.properties.getAppConfigs().stream().map(a -> {
             val configStorage = new WxCpDefaultConfigImpl();
             configStorage.setCorpId(this.properties.getCorpId());
+            configStorage.setMsgAuditLibPath(this.properties.getMsgAuditLibPath());
             configStorage.setAgentId(a.getAgentId());
             configStorage.setCorpSecret(a.getSecret());
             configStorage.setToken(a.getToken());

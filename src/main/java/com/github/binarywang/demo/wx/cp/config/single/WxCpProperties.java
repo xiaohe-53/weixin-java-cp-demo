@@ -20,6 +20,11 @@ public class WxCpProperties {
    */
   private String corpId;
 
+    /**
+     * 设置企业微信会话存档的本地库地址（.so/.dll）
+     */
+  private String msgAuditLibPath;
+
   private List<AppConfig> appConfigs;
 
   @Getter
