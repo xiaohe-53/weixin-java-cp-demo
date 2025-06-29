@@ -14,14 +14,17 @@ import org.springframework.context.annotation.ComponentScans;
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 @ComponentScans({
-    @ComponentScan("com.github.binarywang.demo.wx.cp.config.single"),
+//    @ComponentScan("com.github.binarywang.demo.wx.cp.config.single"),
+//    @ComponentScan("com.github.binarywang.demo.wx.cp.controller.single"),
+    @ComponentScan("com.github.binarywang.demo.wx.cp.config.mutil"),
     @ComponentScan("com.github.binarywang.demo.wx.cp.handler"),
-    @ComponentScan("com.github.binarywang.demo.wx.cp.controller.single")})
+    @ComponentScan("com.github.binarywang.demo.wx.cp.controller.mutil")
+})
 @SpringBootApplication
 public class WxCpDemoApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(WxCpDemoApplication.class, args);
-  }
+    public static void main(String[] args) {
+        SpringApplication.run(WxCpDemoApplication.class, args);
+    }
 
 }

@@ -6,11 +6,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.4</version>
+        <version>3.5.0</version>
     </parent>
 
     <groupId>com.github.binarywang</groupId>
-    <version>1.0.7</version>
+    <version>1.0.9</version>
     <artifactId>weixin-java-cp-starter</artifactId>
     <packaging>jar</packaging>
 
@@ -18,9 +18,9 @@
     <description>Spring Boot Demo with wechat CP</description>
 
     <properties>
-        <weixin-java-cp.version>4.7.0</weixin-java-cp.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <weixin-java-cp.version>4.7.6.B</weixin-java-cp.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.locales>zh_CN</project.build.locales>
