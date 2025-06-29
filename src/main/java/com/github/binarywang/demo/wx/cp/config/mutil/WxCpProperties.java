@@ -14,37 +14,42 @@ import java.util.List;
 @ConfigurationProperties(prefix = "wechat.cp")
 public class WxCpProperties {
 
-  private List<AppConfig> appConfigs;
-
-  @Getter
-  @Setter
-  public static class AppConfig {
-
     /**
-     * 设置企业微信的corpId
+     * 设置企业微信会话存档的本地库地址（.so/.dll）
      */
-    private String corpId;
+    private String msgAuditLibPath;
 
-    /**
-     * 设置企业微信应用的AgentId
-     */
-    private Integer agentId;
+    private List<AppConfig> appConfigs;
 
-    /**
-     * 设置企业微信应用的Secret
-     */
-    private String secret;
+    @Getter
+    @Setter
+    public static class AppConfig {
 
-    /**
-     * 设置企业微信应用的token
-     */
-    private String token;
+        /**
+         * 设置企业微信的corpId
+         */
+        private String corpId;
 
-    /**
-     * 设置企业微信应用的EncodingAESKey
-     */
-    private String aesKey;
+        /**
+         * 设置企业微信应用的AgentId
+         */
+        private Integer agentId;
 
-  }
+        /**
+         * 设置企业微信应用的Secret
+         */
+        private String secret;
+
+        /**
+         * 设置企业微信应用的token
+         */
+        private String token;
+
+        /**
+         * 设置企业微信应用的EncodingAESKey
+         */
+        private String aesKey;
+
+    }
 
 }
