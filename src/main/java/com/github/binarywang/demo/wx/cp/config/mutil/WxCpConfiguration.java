@@ -91,7 +91,9 @@ public class WxCpConfiguration {
             config.setCorpSecret(a.getSecret());
             config.setToken(a.getToken());
             config.setAesKey(a.getAesKey());
-            config.setMsgAuditLibPath(this.properties.getMsgAuditLibPath());
+            config.setMsgAuditLibPath(a.getMsgAuditLibPath());
+            config.setMsgAuditSecret(a.getMsgAuditSecret());
+            config.setMsgAuditPriKey(a.getMsgAuditPriKey());
 
             val service = new WxCpServiceImpl();
             service.setWxCpConfigStorage(config);

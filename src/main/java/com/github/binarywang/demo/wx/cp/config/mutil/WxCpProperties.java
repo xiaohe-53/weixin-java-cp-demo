@@ -14,11 +14,6 @@ import java.util.List;
 @ConfigurationProperties(prefix = "wechat.cp")
 public class WxCpProperties {
 
-    /**
-     * 设置企业微信会话存档的本地库地址（.so/.dll）
-     */
-    private String msgAuditLibPath;
-
     private List<AppConfig> appConfigs;
 
     @Getter
@@ -49,6 +44,21 @@ public class WxCpProperties {
          * 设置企业微信应用的EncodingAESKey
          */
         private String aesKey;
+
+        /**
+         * 设置企业微信会话存档的本地库地址（.so/.dll）
+         */
+        private String msgAuditLibPath;
+
+        /**
+         * 设置企业微信会话存档的应用密钥
+         */
+        private String msgAuditSecret;
+
+        /**
+         * 设置企业微信会话存档的企业消息解密的私钥
+         */
+        private String msgAuditPriKey;
 
     }
 
