@@ -25,6 +25,16 @@ public class WxCpProperties {
      */
   private String msgAuditLibPath;
 
+    /**
+     * 设置企业微信会话存档的应用密钥
+     */
+    private String msgAuditSecret;
+
+    /**
+     * 设置企业微信会话存档的企业消息解密的私钥
+     */
+    private String msgAuditPriKey;
+
   private List<AppConfig> appConfigs;
 
   @Getter
